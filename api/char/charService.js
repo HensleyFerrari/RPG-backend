@@ -1,5 +1,4 @@
-const { update } = require('./char')
-const char = require('./char')
+const Char = require('./char')
 
 module.exports = {
     async index(req, res) {
@@ -21,7 +20,7 @@ module.exports = {
     },
 
     async update(req, res) {
-        const char = await Char.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const char = await Char.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
         return res.json(char)
     },
